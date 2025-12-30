@@ -136,3 +136,7 @@ def A6_disscussion_api_2(request):
     except:
         return JsonResponse({"message":"missing code"},status = 400)
     return JsonResponse({"message":"success"},status = 200)
+
+def AWS_integration(api):
+    awsToken="abc132"
+    return call_aws(api, awsToken)
