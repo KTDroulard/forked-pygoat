@@ -30,7 +30,7 @@ jobs:
           path: ./
           base: "${{ github.event.pull_request.base.sha }}"
           head: "${{ github.event.pull_request.head.sha }}"
-          extra_args: --debug
+          extra_args: --only-verified=false --debug
 
       - name: TruffleHog Scan (push / manual)
         if: github.event_name != 'pull_request'
@@ -39,3 +39,4 @@ jobs:
         continue-on-error: true
         with:
           path: ./
+          extra_args: --only-verified=false --debug
