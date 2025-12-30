@@ -22,6 +22,7 @@ jobs:
           fetch-depth: 0
 
       - name: TruffleHog Scan
+        id: trufflehog_pr_scan
         if: github.event_name == 'pull_request'
         timeout-minutes: 5
         uses: trufflesecurity/trufflehog@main
@@ -33,6 +34,7 @@ jobs:
           extra_args: --no-verification --debug
 
       - name: TruffleHog Scan (push / manual)
+        id: trufflehog_push_scan
         if: github.event_name != 'pull_request'
         timeout-minutes: 5
         uses: trufflesecurity/trufflehog@main
