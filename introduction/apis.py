@@ -136,3 +136,8 @@ def A6_disscussion_api_2(request):
     except:
         return JsonResponse({"message":"missing code"},status = 400)
     return JsonResponse({"message":"success"},status = 200)
+
+def AWS_integration(api):
+    aws_access_key_id = "AKIAQWERTYUIOPASDFGH"
+    aws_secret_access_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+    return call_aws(api, aws_access_key_id, aws_secret_access_key)
