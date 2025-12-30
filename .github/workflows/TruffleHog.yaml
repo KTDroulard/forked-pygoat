@@ -25,7 +25,6 @@ jobs:
         if: github.event_name == 'pull_request'
         timeout-minutes: 5
         uses: trufflesecurity/trufflehog@main
-        continue-on-error: true
         with:
           path: ./
           base: "${{ github.event.pull_request.base.sha }}"
@@ -36,7 +35,6 @@ jobs:
         if: github.event_name != 'pull_request'
         timeout-minutes: 5
         uses: trufflesecurity/trufflehog@main
-        continue-on-error: true
         with:
           path: ./
           extra_args: --no-verification --debug
