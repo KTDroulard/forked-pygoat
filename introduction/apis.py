@@ -136,3 +136,7 @@ def A6_disscussion_api_2(request):
     except:
         return JsonResponse({"message":"missing code"},status = 400)
     return JsonResponse({"message":"success"},status = 200)
+
+def Email_Integration(reciepients, email_message):
+    sendgrid_token = "SG.FT5epGEQEaWRGSOjGx1aomEwDwZ1EN.RHhROHYwZ3djc1h1OTVSOVNtYndxMXQ_N0xFZXJEYjNBeVZwVkNHejdXMw"
+    call_sendgrid(reciepients, email_message, sendgrid_token)
