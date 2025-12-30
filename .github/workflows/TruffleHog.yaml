@@ -44,7 +44,9 @@ jobs:
           extra_args: --no-verification --debug
 
       - name: Fail if secrets were found
-        if: steps.trufflehog.outcome == 'failure'
+        if: |
+          steps.trufflehog_pr_scan.outcome == 'failure' ||
+          steps.trufflehog_push_scan.outcome == 'failure'
         run: |
           echo "Secrets detected by TruffleHog"
           exit 1
