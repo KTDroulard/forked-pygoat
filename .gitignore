@@ -8,7 +8,6 @@ venv
 app.log
 bin
 *.env
-
 #  LOG files
 *.log
 
